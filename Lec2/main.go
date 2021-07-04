@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/NamDuongkiwi/GoLab/Lec2/function"
+)
 
 func main(){
-	fmt.Println("Nam")
+	text := function.ReadFromFile()
 }
