@@ -1,0 +1,6 @@
+Read data from txt: [ 23 54 17 54 123 543 24 65 2 5 29 1000 ]
+Min of array: 2
+Max of array: 1000
+AVG of array: 161.58
+List of prime in array: [ 23 17 2 5 29 ]
+Array after sort: [ 2 5 17 23 24 29 54 54 65 123 543 1000 ]
