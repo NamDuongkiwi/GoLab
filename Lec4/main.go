@@ -1,21 +1,32 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"github.com/gocolly/colly/v2"
+	"github.com/NamDuongkiwi/GoLab/Lec4/models"
+	"log"
+	"os"
 )
 
+
+
+func NewEbooks() *models.Ebooks {
+	return &models.Ebooks{}
+}
+
+func checkError(err error) {
+	if err != nil {
+		log.Println(err)
+	}
+}
+
 func main() {
-	c := colly.NewCollector()
-
-	// Find and visit all links
-	c.OnHTML("a[href]", func(e *colly.HTMLElement) {
-		e.Request.Visit(e.Attr("href"))
-	})
-
-	c.OnRequest(func(r *colly.Request) {
-		fmt.Println("Visiting", r.URL)
-	})
-
-	c.Visit("http://go-colly.org/")
+	flag.Parse()
+	args := flag.Args()
+	if len(args) < 1 {
+		fmt.Println("Please specify start page")
+		os.Exit(1)
+	}
+	currentUrl := args[0] // Đây là biến lấy ra URL mà bạn muốn crawl data
+	fmt.Println(currentUrl)
 }
