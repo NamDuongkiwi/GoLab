@@ -9,6 +9,7 @@ const InputFile = "IOFile/input.txt"
 const OutputFile = "IOFile/output.txt"
 
 func main(){
+	//cmt to up git
 	context := handle.ReadFromFile(InputFile)
 	array := handle.ConvertStringtoArray(context)
 
